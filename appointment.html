@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form onsubmit = "saveToLocalStorage(event)">
+            <label> Name </label>
+            <input type = "text" name="username" />
+            <label> EmailId </label>
+            <input type = "email" name="emailId" />
+            <label> Phone Number </label>
+            <input type = "tel" name="phonenumber" />
+            <button> Submit </button>
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"></script>
+        <script>
+            function saveToLocalStorage(event){
+                event.preventDefault();
+                const name = event.target.username.value;
+                const email = event.target.emailId.value;
+                const phonenumber = event.target.phonenumber.value;
+                //localStorage.setItem('name', name);
+                //localStorage.setItem('email', email);
+                //localStorage.setItem('phonenumber', phonenumber);
+                const obj = {
+                    name,
+                    email,
+                    phonenumber
+                }
+
+                axios.post("https://crudcrud.com/api/30dbd561176b49a8952bb84334ea43c7/AppointmentData".obj)
+                .then((respone) =>{
+                    console.log(respone)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+                
+                
+                
+
+        } 
+        
+        
+        </script>
+
+
+    </body> 
+</html>
