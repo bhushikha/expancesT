@@ -1,0 +1,1 @@
+console.log(localStorage.setItem("name","Bob"))
