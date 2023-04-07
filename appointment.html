@@ -27,12 +27,26 @@
                 }
 
                 axios.post("https://crudcrud.com/api/30dbd561176b49a8952bb84334ea43c7/AppointmentData".obj)
-                .then((respone) =>{
-                    console.log(respone)
+                .then((response) =>{
+                    console.log(response)
                 })
                 .catch((err)=>{
                     console.log(err)
                 })
+            window.addEventListener("DOMContentLoaded", () => {
+                axios.get("https://crudcrud.com/api/30dbd561176b49a8952bb84334ea43c7/AppointmentData")
+                    .then((respone) => {
+                        console.log(respone)
+
+                        for(var i=0; i<response.data.length; i++){
+                            showNewUserOnScreen(response.data[i])
+                        }
+
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            })
                 
                 
                 
